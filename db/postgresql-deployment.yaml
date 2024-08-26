@@ -16,11 +16,11 @@ spec:
         image: postgres:latest
         env:
         - name: POSTGRES_DB
-          value: thirdprojectdatabase
+          value: mydatabase
         - name: POSTGRES_USER
-          value: aurorathirdproject
+          value: myuser
         - name: POSTGRES_PASSWORD
-          value: k8s
+          value: mypassword
         ports:
         - containerPort: 5432
         volumeMounts:
