@@ -52,5 +52,5 @@ spec:
           valueFrom:
             secretKeyRef:
               name: my-secret
-              key: DB_PASSWORD
+              key: db_password
       restartPolicy: Always
