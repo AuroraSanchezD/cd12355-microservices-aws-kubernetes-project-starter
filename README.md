@@ -131,15 +131,21 @@ Please provide up to 3 sentences for each suggestion. Additional content in your
 * The Docker images use semantic versioning with three numbers separated by dots, e.g. `1.2.1` and  versioning is visible in the  screenshot. See [Semantic Versioning](https://semver.org/) for more details.
 
 
-
+### AWS Services used
 
 This project uses Python, PostgreSQL, Docker and Kubernetes to create an app that keeps track of users in a coworking space. The following AWS services are used to operationalize the microservice:
 
-- Elastic Kubernetes Service (EKS) to manage the Kubernetes cluster
+- Elastic Kubernetes Service (EKS) to manage the Kubernetes cluster:
         ![EKScluster](screenshots/EKScluster.png)
-- EC2 to provide computing resources such as the node groups present in the EKS cluster I have previously created
+- EC2 to provide computing resources such as the node groups present in the EKS cluster I have previously created:
         ![Nodegroup](screenshots/Nodegroup.png)
-- Elastic Container Registry (ECR) to create a repository where the image outlined in my Dockerfile [Dockerfile] (analytics/Dockerfile) will be hosted
+- Elastic Container Registry (ECR) to create a repository where the image outlined in my Dockerfile [Dockerfile] (./analytics/Dockerfile) will be hosted:
         ![ECR](screenshots/ECRrepository.png)
-- Codebuild to set up continuous integration (CI) to push the Docker image in a consistent and automated manner to ECR
+- Codebuild to set up continuous integration (CI) to push the Docker image in a consistent and automated manner to ECR:
         ![CodeBuild](screenshots/CodeBuildSuccessfulBuild.png)
+- CloudWatch Logging to get information about important events in our application and container insights:
+        ![CloudWatch](screenshots/AWSCloudWatchLogging.png)
+
+### Configuration files, Docker and Kubernetes
+
+Inside of the 
