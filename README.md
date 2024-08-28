@@ -5,7 +5,7 @@ This project uses Python, PostgreSQL, Docker and Kubernetes to create an app tha
 - Elastic Kubernetes Service (EKS) to manage the Kubernetes cluster:
         ![EKScluster](screenshots/EKScluster.png)
 - EC2 to provide computing resources such as the node groups present in the EKS cluster I have previously created:
-        ![Nodegroup](screenshots/Nodegroup.png)
+        ![Nodegroup](screenshots/NodeGroup.png)
 - Elastic Container Registry (ECR) to create a repository where the image outlined in my [Dockerfile](./analytics/Dockerfile) will be hosted:
         ![ECR](screenshots/ECRrepository.png)
 - Codebuild to set up continuous integration (CI) to push the Docker image in a consistent and automated manner to ECR:
