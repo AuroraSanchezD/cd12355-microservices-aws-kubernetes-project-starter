@@ -5,13 +5,11 @@ phases:
     commands:
       - echo Logging into ECR
       - aws ecr get-login-password --region $AWS_DEFAULT_REGION | docker login --username AWS --password-stdin $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com
-      - echo Checking for cached base image...
-      - docker pull $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/python:3.10-slim-buster || true
   build:
     commands:
       - echo Starting build at `date`
       - echo Building the Docker image...          
-      - docker build --cache-from $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/python:3.10-slim-buster -t $IMAGE_REPO_NAME:$CODEBUILD_BUILD_NUMBER ./analytics
+      - docker build -t $IMAGE_REPO_NAME:$CODEBUILD_BUILD_NUMBER ./analytics
       - docker tag $IMAGE_REPO_NAME:$CODEBUILD_BUILD_NUMBER $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$IMAGE_REPO_NAME:$CODEBUILD_BUILD_NUMBER      
   post_build:
     commands:
