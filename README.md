@@ -8,8 +8,9 @@ This project uses Python, PostgreSQL, Docker and Kubernetes to create an app tha
         ![Nodegroup](screenshots/NodeGroup.png)
 - Elastic Container Registry (ECR) to create a repository where the image outlined in my [Dockerfile](./analytics/Dockerfile) will be hosted:
         ![ECR](screenshots/ECRrepository.png)
-- Codebuild to set up continuous integration (CI) to push the Docker image in a consistent and automated manner to ECR:
-        ![CodeBuild](screenshots/CodeBuildSuccessfulBuild.png)
+        ![UploadedImage](screenshots/ImageuploadedtoECRrepository.png)
+- Codebuild to set up continuous integration (CI) to push the Docker image when merge requests are pushed to Github:
+        ![CodeBuild](screenshots/CodeBuildSuccessfulAutomatedBuild.png)
 - CloudWatch Logging to get information about important events in our application and container insights:
         ![CloudWatch](screenshots/AWSCloudWatchLogging.png)
 
