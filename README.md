@@ -20,6 +20,6 @@ Inside of the analytics folder, we find a [Dockerfile](./analytics/Dockerfile) w
 
 On the other hand, in the db folder, we can find two configuration files: [postgresql-deployment.yaml](./db/postgresql-deployment.yaml) and [postgresql-service.yaml](./db/postgresql-service.yaml). These files contain key information about the container (its ports, username, database name...) and the port where the service will run respectively. In the db folder we can also see [pv.yaml](./db/pv.yaml) and [pvc.yaml](./db/pvc.yaml), which are resources that manage storage inside of the Kubernetes cluster.
 
-Finally, inside of the deployment folder, there is a [configmap.yaml](./deployment/configmap.yaml) that stores key info about the database and secrets in a key-value pair format. [coworking.yaml](./deployment/coworking.yaml) includes Kubernetes configs about deployment and service, stating that the Kubernetes cluster is of type LoadBalancer.
+Finally, inside of the deployment folder, there is a [configmap.yaml](./deployment/configmap.yaml) that stores key info about the database and a [secrets.yaml](./deployment/secrets.yaml) file separately. [coworking.yaml](./deployment/coworking.yaml) includes Kubernetes configs about deployment and service, stating that the Kubernetes cluster is of type LoadBalancer.
 
 Note: please see my screenshot folder for remaining screenshots to fulfill all requirements in the project.
